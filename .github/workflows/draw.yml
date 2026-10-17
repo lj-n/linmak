@@ -1,0 +1,26 @@
+name: Draw keymap
+
+on:
+  push:
+    paths:
+      - config/glove80.keymap
+      - keymap-drawer/config.yaml
+      - mise.toml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  draw:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: jdx/mise-action@v5
+      - name: Render SVG
+        run: mise run draw
+      - name: Commit updated SVG
+        uses: stefanzweifel/git-auto-commit-action@v7
+        with:
+          commit_message: "keymap-drawer: re-render SVG [skip ci]"
+          file_pattern: keymap-drawer/glove80.svg

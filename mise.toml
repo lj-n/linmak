@@ -1,0 +1,23 @@
+[tools]
+uv = "latest"
+"pipx:keymap-drawer" = "latest"
+
+[tasks.draw]
+description = "Render the keymap as SVG (keymap-drawer/glove80.svg)"
+run = """
+keymap -c keymap-drawer/config.yaml parse -z config/glove80.keymap \
+  -l Base Typing Autoshift LeftPinky LeftRingy LeftMiddy LeftIndex RightIndex RightMiddy RightRingy RightPinky \
+     Cursor Symbol Mouse MouseSlow MouseFast MouseWarp Magic Numbers Function Gaming Aerospace \
+  > keymap-drawer/glove80.yaml
+keymap -c keymap-drawer/config.yaml draw keymap-drawer/glove80.yaml \
+  -s Base Symbol Numbers Cursor Function Aerospace Mouse Magic \
+  > keymap-drawer/glove80.svg
+"""
+
+[tasks.build]
+description = "Build the firmware locally via Docker (glove80.uf2)"
+usage = 'arg "[branch]" help="moergo-sc/zmk branch or tag" default="main"'
+run = """
+docker build -t glove80-zmk-config-docker https://github.com/moergo-sc/glove80-zmk-config.git
+docker run --rm -v "$PWD:/config" -e UID="$(id -u)" -e GID="$(id -g)" -e BRANCH="$usage_branch" glove80-zmk-config-docker
+"""

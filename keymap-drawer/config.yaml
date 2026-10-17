@@ -1,0 +1,240 @@
+# keymap-drawer config for linmak
+# Re-render with: `mise run draw`
+
+parse_config:
+  trans_legend: { t: "▽", type: trans }
+  modifier_fn_map:
+    left_ctrl: Ctl
+    right_ctrl: Ctl
+    left_shift: Sft
+    right_shift: Sft
+    left_alt: Alt
+    right_alt: AltGr
+    left_gui: Gui
+    right_gui: Gui
+    keycode_combiner: "{mods}+{key}"
+    mod_combiner: "{mod_1}+{mod_2}"
+    special_combinations:
+      left_ctrl+left_alt+left_gui+left_shift: Hyp
+      left_ctrl+left_alt+left_shift: Meh
+      left_alt+left_gui+left_shift: AGS
+  zmk_keycode_map:
+    # keymap-drawer defaults (this map replaces them otherwise)
+    EXCLAMATION: "!"
+    EXCL: "!"
+    AT_SIGN: "@"
+    AT: "@"
+    HASH: "#"
+    POUND: "#"
+    DOLLAR: "$"
+    DLLR: "$"
+    PERCENT: "%"
+    PRCNT: "%"
+    CARET: "^"
+    AMPERSAND: "&"
+    AMPS: "&"
+    ASTERISK: "*"
+    ASTRK: "*"
+    STAR: "*"
+    LEFT_PARENTHESIS: "("
+    LPAR: "("
+    RIGHT_PARENTHESIS: ")"
+    RPAR: ")"
+    EQUAL: "="
+    PLUS: "+"
+    MINUS: "-"
+    UNDERSCORE: "_"
+    UNDER: "_"
+    SLASH: "/"
+    FSLH: "/"
+    QUESTION: "?"
+    QMARK: "?"
+    BACKSLASH: "\\"
+    BSLH: "\\"
+    PIPE: "|"
+    NON_US_BACKSLASH: "\\"
+    PIPE2: "|"
+    NON_US_BSLH: "|"
+    SEMICOLON: ";"
+    SEMI: ";"
+    COLON: ":"
+    SINGLE_QUOTE: "'"
+    SQT: "'"
+    APOSTROPHE: "'"
+    APOS: "'"
+    DOUBLE_QUOTES: "\""
+    DQT: "\""
+    COMMA: ","
+    LESS_THAN: "<"
+    LT: "<"
+    PERIOD: "."
+    DOT: "."
+    GREATER_THAN: ">"
+    GT: ">"
+    LEFT_BRACKET: "["
+    LBKT: "["
+    LEFT_BRACE: "{"
+    LBRC: "{"
+    RIGHT_BRACKET: "]"
+    RBKT: "]"
+    RIGHT_BRACE: "}"
+    RBRC: "}"
+    GRAVE: "`"
+    TILDE: "~"
+    NON_US_HASH: "#"
+    NUHS: "#"
+    TILDE2: "~"
+    # Standalone modifiers
+    LSHFT: Sft
+    RSHFT: Sft
+    LCTRL: Ctl
+    RCTRL: Ctl
+    LALT: Alt
+    RALT: AltGr
+    LGUI: Gui
+    RGUI: Gui
+    CAPS: Caps
+    # Readable shifted symbols (LS(...))
+    LS(N1): "!"
+    LS(N2): "@"
+    LS(N3): "#"
+    LS(N4): "$"
+    LS(N5): "%"
+    LS(N6): "^"
+    LS(N7): "&"
+    LS(N8): "*"
+    LS(N9): "("
+    LS(N0): ")"
+    LS(MINUS): "_"
+    LS(EQUAL): "+"
+    LS(LBKT): "{"
+    LS(RBKT): "}"
+    LS(BSLH): "|"
+    LS(SEMI): ":"
+    LS(SINGLE_QUOTE): '"'
+    LS(COMMA): "<"
+    LS(DOT): ">"
+    LS(FSLH): "?"
+    LS(GRAVE): "~"
+    LS(TAB): "⇧Tab"
+    # Navigation & misc
+    ESC: Esc
+    INS: Ins
+    DEL: Del
+    TAB: Tab
+    HOME: Home
+    END: End
+    PG_UP: PgUp
+    PG_DN: PgDn
+    K_APP: Menu
+  raw_binding_map:
+    # German characters via EurKEY (AltGr)
+    "&kp RA(N8)": { t: "ß", type: umlaut }
+    "&kp RA(U)": { t: "ü", type: umlaut }
+    "&kp RA(O)": { t: "ö", type: umlaut }
+    "&kp RA(A)": { t: "ä", type: umlaut }
+    # Home row mods (TailorKey, bilateral)
+    "&HRM_left_pinky_v1B_TKZ LGUI A": { t: A, h: Gui, type: hrm }
+    "&HRM_left_ring_v1B_TKZ LALT O": { t: O, h: Alt, type: hrm }
+    "&HRM_left_middy_v1B_TKZ LCTRL I": { t: I, h: Ctl, type: hrm }
+    "&HRM_left_index_v1B_TKZ LSHFT N": { t: N, h: Sft, type: hrm }
+    "&HRM_right_index_v1B_TKZ RSHFT H": { t: H, h: Sft, type: hrm }
+    "&HRM_right_middy_v1B_TKZ RCTRL T": { t: T, h: Ctl, type: hrm }
+    "&HRM_right_ring_v1B_TKZ LALT S": { t: S, h: Alt, type: hrm }
+    "&HRM_right_pinky_v1B_TKZ RGUI R": { t: R, h: Gui, type: hrm }
+    # Thumbs
+    "&thumb_v2_TKZ LAYER_Cursor E": { t: E, h: Cursor, type: thumb }
+    "&thumb_v2_TKZ LAYER_Numbers TAB": { t: Tab, h: Numbers, type: thumb }
+    "&thumb_v2_TKZ LAYER_Aerospace ESC": { t: Esc, h: Aerospace, type: thumb }
+    "&thumb_v2_TKZ LAYER_Function INS": { t: Ins, h: Function, type: thumb }
+    "&thumb_v2_TKZ LAYER_Mouse BSPC": { t: "⌫", h: Mouse, type: thumb }
+    "&space_v3_TKZ LAYER_Symbol SPACE": { t: "␣", h: Symbol, type: thumb }
+    "&kp RET": "⏎"
+    "&kp BSPC": "⌫"
+    "&kp SPACE": "␣"
+    "&caps_word": { t: Caps Word, type: special }
+    "&magic LAYER_Magic 0": { t: Magic, type: special }
+    "&kp LA(LC(LSHFT))": Meh
+    "&mod_tab_chord_v2_TKZ LALT 11": Alt⇥
+    "&mod_tab_chord_v2_TKZ LCTRL 11": Ctl⇥
+    "&mod_tab_chord_v2_TKZ LGUI 11": Gui⇥
+    "&kp LC(LC(V))": Ctl+V
+    # Cursor macros (TailorKey)
+    "&cur_SELECT_WORD_v1_TKZ": Sel Word
+    "&cur_SELECT_LINE_v1_TKZ": Sel Line
+    "&cur_SELECT_NONE_v1_TKZ": Sel None
+    "&cur_EXTEND_WORD_v1_TKZ": Ext Word
+    "&cur_EXTEND_LINE_v1_TKZ": Ext Line
+    "&symb_dotdot_v1_TKZ": "../"
+    "&rgb_ug_status_macro": RGB Status
+    "&bt_0": BT 0
+    "&bt_1": BT 1
+    "&bt_2": BT 2
+    "&bt_3": BT 3
+    "&out OUT_USB": USB
+    "&out OUT_BLE": BLE
+    "&bootloader": { t: Boot, type: special }
+    "&sys_reset": { t: Reset, type: special }
+    # Mouse
+    "&mkp LCLK": { t: "$$tabler:mouse$$", s: Left }
+    "&mkp RCLK": { t: "$$tabler:mouse$$", s: Right }
+    "&mkp MCLK": { t: "$$tabler:mouse$$", s: Middle }
+    "&mkp MB4": Back
+    "&mkp MB5": Fwd
+    "&mmv MOVE_UP": "$$tabler:arrow-up$$"
+    "&mmv MOVE_DOWN": "$$tabler:arrow-down$$"
+    "&mmv MOVE_LEFT": "$$tabler:arrow-left$$"
+    "&mmv MOVE_RIGHT": "$$tabler:arrow-right$$"
+    "&msc SCRL_UP": { t: "$$tabler:arrow-bar-up$$", s: Scroll }
+    "&msc SCRL_DOWN": { t: "$$tabler:arrow-bar-down$$", s: Scroll }
+    "&msc SCRL_LEFT": { t: "$$tabler:arrow-bar-left$$", s: Scroll }
+    "&msc SCRL_RIGHT": { t: "$$tabler:arrow-bar-right$$", s: Scroll }
+    "&kp UP": "$$tabler:arrow-up$$"
+    "&kp DOWN": "$$tabler:arrow-down$$"
+    "&kp LEFT": "$$tabler:arrow-left$$"
+    "&kp RIGHT": "$$tabler:arrow-right$$"
+
+draw_config:
+  dark_mode: auto
+  append_colon_to_layer_header: false
+  separate_combo_diagrams: true
+  combo_diagrams_scale: 2
+  key_w: 60
+  key_h: 56
+  key_rx: 8
+  key_ry: 8
+  combo_w: 34
+  combo_h: 24
+  shrink_wide_legends: 6
+  footer_text: "linmak — Glove80 · based on Aptmak Blue + TailorKey v5.2 Bilateral"
+  svg_extra_style: |
+    svg.keymap { background: #fdfdfb; font-family: "JetBrains Mono", "SF Mono", ui-monospace, Menlo, monospace; font-size: 14px; }
+    text.label { font-weight: 700; font-size: 18px; letter-spacing: 0.04em; stroke: #fdfdfb; }
+    text.footer { stroke: #fdfdfb; }
+    text.hold { font-size: 10px; opacity: 0.8; }
+
+    /* Colors by key type (light) */
+    rect.key { fill: #f7f7f5; }
+    rect.key, rect.combo { stroke: #d4d4cf; }
+    rect.hrm { fill: #e3efe0; stroke: #9cc49a; }
+    rect.umlaut { fill: #fbe8c8; stroke: #e0b25f; }
+    rect.thumb { fill: #dce8f7; stroke: #8fb2dd; }
+    rect.special { fill: #ece3f6; stroke: #b49ad6; }
+    rect.held { fill: #f6d2cf; stroke: #d98b84; }
+    rect.combo, rect.combo-separate { fill: #e4e7fb; stroke: #a5addf; }
+    text.umlaut { font-weight: 700; }
+    text.layer-activator { font-weight: 600; }
+
+    /* Dark mode (follows prefers-color-scheme) */
+    @media (prefers-color-scheme: dark) {
+      svg.keymap { fill: #e6e6e1; background: #1d2026; }
+      text.label, text.footer { stroke: #1d2026; }
+      rect.key { fill: #2b2f36; }
+      rect.key, rect.combo { stroke: #464c55; }
+      rect.hrm { fill: #2c4430; stroke: #4f7a52; }
+      rect.umlaut { fill: #4d3c1e; stroke: #9a7432; }
+      rect.thumb { fill: #243a55; stroke: #456d9c; }
+      rect.special { fill: #3b2f4f; stroke: #6f5a92; }
+      rect.held { fill: #5a2f2c; stroke: #8f514b; }
+      rect.combo, rect.combo-separate { fill: #2c3260; stroke: #4c559a; }
+    }
