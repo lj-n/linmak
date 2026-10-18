@@ -11,9 +11,12 @@
   "title": "linmak",
   "notes": "🧿TK52³BIL: https://sites.google.com/view/tailorkey\nTailorKey is a zero-code, Glorious Engrammer–inspired layout that’s beginner-friendly yet fully pro-ready. \nIt delivers a full set of advanced features, including:\n• Advanced Home Row Mods with Bilateral Combinations Enforcement (Sunaku)\n• Autoshift\n• Symbol, Cursor, and Gaming Layers\n• RGB Lighting (optional)\n• Advanced Mouse Emulation\n• Combo Keys\n\nTailorKey leverages the Layout Editor’s powerful built-in (native) functions, enabling easy customization, or allows you to simply copy its capabilities to craft your own unique layout—all without relying on Custom-Defined Behaviors.\n\n🖱️Mouse Emulation\nEnable mouse emulation by turning on the HID_POINTING option under Advanced Configuration.\nIf you’re using mouse emulation for the first time, unpair the keyboard from all host computers and then re-pair it.\n\nThis zero-code layout is developed by @moosy. More information is available on https://sites.google.com/view/tailorkey\nTailorKey is inspired by the fully featured Glorious Engrammer, developed by @sunaku. Please see https://github.com/sunaku/glove80-keymaps/releases for the Glorious Engrammer layout.\n\n💡 Tip: Want to use only part of this layout (like Home-Row Mods or AutoShift)? Just copy the relevant layer—its associated macros and hold-tap actions will be included automatically.\n📺 See how it's done here:  https://www.youtube.com/watch?v=m72eTAEUWho",
   "tags": [
-    "qwerty",
+    "aptmak",
+    "aptmakblue",
     "tailorkey",
-    "tk52bil"
+    "bilingual",
+    "german",
+    "eurkey"
   ],
   "custom_defined_behaviors": "",
   "custom_devicetree": "",
