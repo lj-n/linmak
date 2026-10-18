@@ -8,6 +8,10 @@ on:
       - mise.toml
   workflow_dispatch:
 
+concurrency:
+  group: draw-${{ github.ref }}
+  cancel-in-progress: true
+
 permissions:
   contents: write
 

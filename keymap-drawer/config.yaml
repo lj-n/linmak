@@ -143,7 +143,6 @@ parse_config:
     "&HRM_right_ring_v1B_TKZ LALT S": { t: S, h: Alt, type: hrm }
     "&HRM_right_pinky_v1B_TKZ RGUI R": { t: R, h: Gui, type: hrm }
     # Thumbs
-    "&thumb_v2_TKZ LAYER_Cursor E": { t: E, h: Cursor, type: thumb }
     "&thumb_v2_TKZ LAYER_Numbers TAB": { t: Tab, h: Numbers, type: thumb }
     "&thumb_v2_TKZ LAYER_Aerospace ESC": { t: Esc, h: Aerospace, type: thumb }
     "&thumb_v2_TKZ LAYER_Function INS": { t: Ins, h: Function, type: thumb }
@@ -158,7 +157,6 @@ parse_config:
     "&mod_tab_chord_v2_TKZ LALT 11": Alt⇥
     "&mod_tab_chord_v2_TKZ LCTRL 11": Ctl⇥
     "&mod_tab_chord_v2_TKZ LGUI 11": Gui⇥
-    "&kp LC(LC(V))": Ctl+V
     # Cursor macros (TailorKey)
     "&cur_SELECT_WORD_v1_TKZ": Sel Word
     "&cur_SELECT_LINE_v1_TKZ": Sel Line

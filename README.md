@@ -1,7 +1,7 @@
 # linmak
 
 My bilingual (German/English) layout for the [MoErgo Glove80](https://www.moergo.com/), as a ZMK config.
-The keymap in [`config/glove80.keymap`](config/glove80.keymap) is the single source of truth. The MoErgo Layout Editor is no longer needed.
+The keymap lives in [`config/glove80.keymap`](config/glove80.keymap), with a matching [`config/glove80.json`](config/glove80.json) that can be imported back into the MoErgo Layout Editor.
 
 ![linmak keymap](keymap-drawer/glove80.svg)
 
@@ -13,15 +13,17 @@ The keymap in [`config/glove80.keymap`](config/glove80.keymap) is the single sou
 - **Technical base:** [TailorKey v5.2 Bilateral](https://sites.google.com/view/tailorkey) by @moosy, inspired by Sunaku's [Glorious Engrammer](https://github.com/sunaku/glove80-keymaps).
   Taken from it:
   - home row mods (GACS) with bilateral combinations enforcement
-  - the Typing and Autoshift layers
+  - the Typing layer
   - the Cursor, Symbol, Mouse, Magic and Gaming layers
   - the combos
 - **My own changes:**
   - `ü ö ä` on the inner index finger column, `ß` top left (all via EurKEY / `RA()`)
   - `y` on the outer right of the home row, `;` on the outer left
-  - `'` bottom left, `z` and `v` moved to the bottom right
+  - `` ` `` and `'` bottom left, `z` and `v` moved to the bottom right
   - `/ - =` and `[ ]` in the bottom row
-  - an Aerospace layer (hold Esc), a numpad layer (hold Tab) and a Meh combo
+  - Cursor layer on its own left thumb key, so E is a plain key
+  - an Aerospace layer (hold Esc), a numpad layer with regular digits (hold Tab) and a Meh combo
+  - Autoshift layer and the left-thumb combos removed
 
 ### Notes
 
@@ -46,6 +48,13 @@ mise run draw
 This uses [keymap-drawer](https://github.com/caksoylar/keymap-drawer) to render `keymap-drawer/glove80.svg` from the keymap.
 Colors, labels and the selected layers are configured in `keymap-drawer/config.yaml`. The SVG follows light/dark mode automatically.
 On GitHub, the `draw.yml` workflow re-renders and commits the SVG whenever the keymap changes.
+
+## Layout Editor round trip
+
+`config/glove80.json` is the same layout in Layout Editor format (import requires *Local Backup and Restore* in the editor settings).
+Every change goes into both files, and `mise run check` verifies they match (CI runs it too).
+
+To edit in the editor instead: import the JSON, make changes, export both JSON and `.keymap`, and replace the two files in `config/`.
 
 ## Building the firmware
 
@@ -76,10 +85,12 @@ See the [Glove80 User Guide](https://docs.moergo.com/glove80-user-guide/) for de
 | Path | Contents |
 | --- | --- |
 | `config/glove80.keymap` | keymap (ZMK devicetree) |
+| `config/glove80.json` | same layout for the Layout Editor |
 | `config/glove80.conf` | Kconfig, e.g. `CONFIG_ZMK_POINTING=y` for mouse emulation |
 | `config/default.nix` | Nix build used by CI and Docker (from the MoErgo template) |
 | `keymap-drawer/` | visualization: config and SVG |
-| `mise.toml` | tools and tasks (`draw`, `build`) |
+| `mise.toml` | tools and tasks (`draw`, `build`, `check`) |
+| `scripts/check-sync.py` | checks keymap and JSON are in sync |
 | `.github/workflows/` | `build.yml` (firmware), `draw.yml` (SVG) |
 
 Based on the [moergo-sc/glove80-zmk-config](https://github.com/moergo-sc/glove80-zmk-config) template (MIT).

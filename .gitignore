@@ -4,6 +4,7 @@
 
 # Intermediate keymap-drawer output, only the SVG is committed
 keymap-drawer/glove80.yaml
+keymap-drawer/*.tmp
 
 # Layout Editor exports stay local
 *_TailorKey*.json
